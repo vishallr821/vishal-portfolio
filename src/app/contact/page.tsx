@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import {
@@ -16,12 +16,12 @@ import {
 import { personalInfo } from "@/data/portfolio";
 
 // ─── Animation Helpers ─────────────────────────────────────
-const slideInLeft = {
+const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -40 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const slideInRight = {
+const slideInRight: Variants = {
   hidden: { opacity: 0, x: 40 },
   visible: {
     opacity: 1,

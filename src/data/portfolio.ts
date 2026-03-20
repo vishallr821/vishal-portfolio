@@ -28,7 +28,7 @@ export const projects = [
     techStack: ["Python", "Streamlit", "Pyannote", "Whisper", "OpenAI", "Groq", "Multithreading"],
     category: "AI / LLM",
     type: "project",
-    githubUrl: "#",
+    githubUrl: "https://github.com/vishallr821",
     demoUrl: "",
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
     techStack: ["Django", "FastAPI", "OpenCV", "Docker", "PostgreSQL", "Monaco Editor"],
     category: "Full-Stack AI",
     type: "project",
-    githubUrl: "#",
+    githubUrl: "https://github.com/vishallr821",
     demoUrl: "",
   },
   {
@@ -50,7 +50,7 @@ export const projects = [
     techStack: ["Kotlin", "Jetpack Compose", "TensorFlow Lite", "ML Kit", "ObjectBox"],
     category: "Mobile AI",
     type: "project",
-    githubUrl: "#",
+    githubUrl: "https://github.com/vishallr821",
     demoUrl: "",
   },
   {
@@ -61,7 +61,7 @@ export const projects = [
     techStack: ["React", "TypeScript", "Node.js", "Express", "Prisma", "SQLite", "Groq API"],
     category: "Full-Stack AI",
     type: "project",
-    githubUrl: "#",
+    githubUrl: "https://github.com/vishallr821",
     demoUrl: "",
   },
   {
@@ -72,7 +72,7 @@ export const projects = [
     techStack: ["Next.js", "TypeScript", "Prisma", "Supabase", "TailwindCSS"],
     category: "Full-Stack",
     type: "project",
-    githubUrl: "#",
+    githubUrl: "https://github.com/vishallr821",
     demoUrl: "",
   },
   {
@@ -83,7 +83,7 @@ export const projects = [
     techStack: ["LiFi", "Signal Processing", "Hardware Integration", "Embedded Systems"],
     category: "Hardware / Embedded",
     type: "project",
-    githubUrl: "",
+    githubUrl: "https://github.com/vishallr821",
     demoUrl: "",
   },
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { BookOpen } from "lucide-react";
@@ -32,7 +32,7 @@ const getDotColor = (level: string) => {
 };
 
 // ─── Animation Variants ──────────────────────────────────
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,

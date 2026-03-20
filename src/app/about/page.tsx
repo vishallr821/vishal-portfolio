@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 // ─── Animation helpers ──────────────────────────────────
-const fadeUp: any = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: (dValue: number) => ({
     opacity: 1,

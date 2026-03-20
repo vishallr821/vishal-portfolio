@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { Github, ExternalLink, Trophy } from "lucide-react";
@@ -30,7 +30,7 @@ const categoryDict = availableCategories.reduce((acc, cat, idx) => {
 }, {} as Record<string, typeof colorPalette[0]>);
 
 // ─── Animation helpers ──────────────────────────────────
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (d: number) => ({
     opacity: 1,

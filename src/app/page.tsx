@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "@/data/portfolio";
@@ -12,18 +12,41 @@ import { personalInfo } from "@/data/portfolio";
 const roles = ["AI Engineer", "Full-Stack Developer", "LLM Specialist", "Award-Winning Developer"];
 
 // ─── Stagger container helper ────────────────────────────
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-const fadeUp: any = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: (dValue: number) => ({
     opacity: 1,
     y: 0,
     transition: { duration: 0.55, ease: "easeOut", delay: dValue },
   }),
+};
+
+const profileFloating: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: [0, -12, 0],
+    transition: {
+      opacity: { duration: 0.8, delay: 0.4 },
+      scale: { duration: 0.8, delay: 0.4 },
+      y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+    },
+  },
+};
+
+const statsBarFade: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.8, duration: 0.6, ease: "easeOut" },
+  },
 };
 
 // ─── Hero Page ───────────────────────────────────────────
@@ -187,17 +210,9 @@ export default function HomePage() {
           {/* ── Right column (2/5) ── Profile Photo ── */}
           <div className="hidden items-center justify-center lg:col-span-2 lg:flex">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ 
-                opacity: 1, 
-                scale: 1,
-                y: [0, -12, 0] 
-              }}
-              transition={{ 
-                opacity: { duration: 0.8, delay: 0.4 },
-                scale: { duration: 0.8, delay: 0.4 },
-                y: { duration: 6, repeat: Infinity, ease: "easeInOut" } 
-              }}
+              initial="hidden"
+              animate="visible"
+              variants={profileFloating}
               className="relative"
             >
               {/* Photo Container */}
@@ -224,9 +239,9 @@ export default function HomePage() {
 
       {/* ═══════════════  STATS BAR  ═══════════════ */}
       <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+        initial="hidden"
+        animate="visible"
+        variants={statsBarFade}
         className="relative z-10 border-t border-surface-dark bg-white shadow-sm"
       >
         <div className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-surface-dark px-6 lg:px-8">

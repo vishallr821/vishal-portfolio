@@ -1,10 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { Download, ExternalLink, GraduationCap, Code2, FolderGit2 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+
+// ─── Animation Variants ──────────────────────────────────
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 export default function ResumePage() {
   return (
@@ -45,9 +55,9 @@ export default function ResumePage() {
       <section className="bg-white px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
             className="overflow-hidden rounded-2xl border border-surface-dark bg-surface shadow-sm"
           >
             {/* Fallback container text behind the iframe */}
@@ -80,10 +90,10 @@ export default function ResumePage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Card 1: Education */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
+              variants={fadeUp}
               className="flex flex-col gap-4 rounded-xl border border-surface-dark bg-white p-6 shadow-sm font-sans"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
@@ -107,10 +117,10 @@ export default function ResumePage() {
 
             {/* Card 2: Tech Skills */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              variants={fadeUp}
               className="flex flex-col gap-4 rounded-xl border border-surface-dark bg-white p-6 shadow-sm font-sans"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600">
@@ -128,10 +138,10 @@ export default function ResumePage() {
 
             {/* Card 3: Key Projects */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+              variants={fadeUp}
               className="flex flex-col gap-4 rounded-xl border border-surface-dark bg-white p-6 shadow-sm font-sans"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">

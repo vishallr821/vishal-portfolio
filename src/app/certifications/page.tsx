@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { Award, Calendar, Hash } from "lucide-react";
 import { certifications } from "@/data/portfolio";
 
 // ─── Animation Helpers ───────────────────────────────────
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24, scale: 0.96 },
   visible: (i: number) => ({
     opacity: 1,
